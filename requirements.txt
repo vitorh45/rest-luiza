@@ -1,0 +1,4 @@
+Django==1.8.3
+django-jsonview==0.4.3
+requests==2.7.0
+

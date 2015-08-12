@@ -22,6 +22,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'vxog8!gc@bztx)!ymkeb&e$ph)k)*w959)ptxj1mylov5sueh!'
 
+APP_ID = '991198177591475'
+APP_SECRET = '3cb6aaa58494a2af9a2370d40124b740'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -101,3 +103,33 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+FB_GRAPH_URL = 'https://graph.facebook.com/%s?fields=name&access_token=%s|%s'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format' : "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+            'datefmt' : "%d/%b/%Y %H:%M:%S"
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'restluiza.log',
+            'formatter': 'verbose'
+        },
+    },
+    'loggers': {
+        'core': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+        },
+    }
+}
